@@ -7,7 +7,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Run and Test
+      - name: Install
         run: |
           sudo cpan -T -i Data::Table::Text
+      - name: Run and Test
+        run: |
+          perl -e"say STDERR qq(OS: $^O)";
           perl -M"Data::Table::Text qw(:all)" -e"say STDERR dateTimeStamp";
+          
