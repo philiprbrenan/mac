@@ -1,0 +1,11 @@
+name: Test
+on:
+  push:
+jobs:
+  macos:
+    runs-on: macOS-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Run and Test
+        run: ls -la
