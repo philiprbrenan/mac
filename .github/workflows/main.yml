@@ -8,4 +8,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Run and Test
-        run: ls -la
+        run: |
+          sudo cpan -T -i Data::Table::Text
